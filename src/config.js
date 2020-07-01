@@ -1,5 +1,7 @@
 module.exports = {
     PORT: process.env.PORT || 8000,
     NODE_ENV: process.env.NODE_ENV || 'development',
-    API_TOKEN: process.env.API_TOKEN || '43f62646-eea0-437a-b41c-cbcfc63a3670'
+    API_TOKEN: process.env.API_TOKEN || 'fake-token',
+    DB_URL: process.env.DB_URL || 'postgresql://dunder_mifflin@localhost/bookmarks',
+    TEST_DB_URL: process.env.TEST_DB_URL || 'postgresql://dunder_mifflin@localhost/bookmarks-test'
   }

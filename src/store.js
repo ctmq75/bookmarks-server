@@ -10,7 +10,12 @@ const bookmarks = [
     title: 'Amazon',
     url: 'https://www.amazon.com',
     description: 'Buy anything and everything',
-    rating: 5 },
+    rating: 4 },
+    { id: uuid(),
+      title: 'Bloc',
+      url: 'https://www.bloc.io',
+      description: 'Learning',
+      rating: 5 },
 ]
 
 module.exports = { bookmarks }
