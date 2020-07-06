@@ -1,10 +1,10 @@
-
+const knex = require('knex')
 const BookmarksService = {
     getAllBookmarks(knex) {
-      return knex.select('*').from('bookmarks')
+      return knex.select('*').from('bookmarks') 
     },
     getById(knex, id) {
-      return knex.from('bookmarks').select('*').where('id', id).first()
+      return knex.from('bookmarks').select('*').where('id', id).first() //
     },
     insertBookmark(knex, newBookmark) {
       return knex
