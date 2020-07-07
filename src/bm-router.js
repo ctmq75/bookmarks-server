@@ -77,7 +77,7 @@ bmRouter
   })
   // returns single bookmark given and ID or error
   .get((req, res) => {
-    res.json(saniBookmark(res.bookmark))
+    res.json(saniBookmarks(res.bookmark))
   })
   // deletes bookmarks with given ID
   .delete((req, res, next) => {
@@ -89,5 +89,20 @@ bmRouter
     })
     .catch(next)
   })
+  .patch(bodyParser, (req, res, next) => {
+    const { title, url, description, rating } = req.body
 
+    const updatedBm = { title, url, description, rating }
+
+    const numberOfValues = Object.values(updatedBm).filter(Boolean).length
+    
+    if (numberOfValues === 0) {
+      logger.error(`Invalid update without required fields`)
+      return res.status(400).json({
+        error: {
+          message: `Body must contain either 'title', 'url', 'description' or 'rating'`
+        }
+      })
+  }
+;})
 module.exports = bmRouter

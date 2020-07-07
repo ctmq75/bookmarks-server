@@ -1,7 +1,7 @@
 const { v4: uuid } = require('uuid');
 
 const bookmarks = [
-  { id: uuid(),
+  { id: 1,
     title: 'ESPN',
     url: 'https://www.espn.com',
     description: 'Sports Scores & News',

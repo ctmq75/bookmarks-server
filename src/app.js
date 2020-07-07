@@ -1,6 +1,5 @@
 
 require('dotenv').config()
-
 const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
@@ -32,6 +31,8 @@ app.use(function errorHandler(error, req, res, next) {
      }
     res.status(500).json(response)
 })
+
+app.use('/api/bookmarks', bmRouter)
 
 
 module.exports = app
